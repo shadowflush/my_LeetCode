@@ -26,7 +26,7 @@ def median(nums1, nums2):
             else:min_of_right = min(nums1[i],nums[j])
 
 
-            if (len1+len2)%2:# if len1+len2 is odd max_of_left is we want
+            if (len1+len2)%2:# if len1+len2 is odd max_of_left is we want. in order to cut down runtime ,place this statement at here not the end
                 return max_of_left
             else:
                 return (max_of_left + min_of_right) / 2.0
