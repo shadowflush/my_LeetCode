@@ -20,18 +20,16 @@ def median(nums1, nums2):
             if i == 0: max_of_left = nums2[j-1]
             elif j == 0: max_of_left = nums1[i-1]
             else:max_of_left = max(nums1[i-1], nums2[j-1])
+			if (len1+len2)%2:# if len1+len2 is odd max_of_left is we want. in order to cut down runtime ,place this statement at here not the end
+                return max_of_left
 
             if i == len1: min_of_right = nums2[j]
             elif j == len2: min_of_right = nums1[i]
             else:min_of_right = min(nums1[i],nums[j])
-
-
-            if (len1+len2)%2:# if len1+len2 is odd max_of_left is we want. in order to cut down runtime ,place this statement at here not the end
-                return max_of_left
-            else:
-                return (max_of_left + min_of_right) / 2.0
+			return (max_of_left + min_of_right) / 2.0
 
 a = [7]
 c = [6,7,8,9]
 d=median(a,c)
 print(d)
+#the answer based on MissMary : https://leetcode.com/problems/median-of-two-sorted-arrays/discuss/2481/Share-my-O(log(min(mn))-solution-with-explanation
